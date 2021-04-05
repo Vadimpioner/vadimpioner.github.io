@@ -3,12 +3,15 @@ const hamburger = document.querySelector('.hamburger'),
     menu = document.querySelector('.menu'),
     menuClose = document.querySelector('.menu__close'),
     menuLink = document.querySelectorAll('.menu__link');
+
 hamburger.addEventListener('click', () => {
     menu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // преостанавливаем скролл при появлении модального окна
 });
 
 menuClose.addEventListener('click', () => {
     menu.classList.remove('active');
+    document.body.style.overflow = '';
 });
 
 menuLink.forEach(item => {
@@ -33,7 +36,7 @@ $("a[href^='#']").click(function() {
     return false;
 });
 
-$('.form').submit(function() {
+/* $('.form').submit(function(e) {
     e.preventDefault();
     $.ajax({
         type: "POST",
@@ -45,20 +48,23 @@ $('.form').submit(function() {
         $('form').trigger('reset');
     });
     return false;
-});
+}); */
 
 
-$("form").submit(function() { //Change
-    var th = $(this);
-    $.ajax({
-        type: "POST",
-        url: "mail.php", //Change
-        data: th.serialize()
-    }).done(function() {
-        setTimeout(function() {
-            // Done Functions
-            th.trigger("reset");
-        }, 1000);
+$(document).ready(function() {
+    $("form").submit(function() { //Change
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "mail.php", //Change
+            data: th.serialize()
+        }).done(function() {
+            alert("Thank you!");
+            setTimeout(function() {
+                // Done Functions
+                th.trigger("reset");
+            }, 1000);
+        });
+        return false;
     });
-    return false;
 });
