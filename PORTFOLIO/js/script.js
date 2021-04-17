@@ -20,6 +20,12 @@ menuLink.forEach(item => {
     });
 });
 
+document.addEventListener('keydown', (e) => { // событие keydown срабатывает при нажатии кнопок
+    if (e.code === 'Escape' && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+    }
+});
+
 /* скрипт автоматического изменения шкалы умений */
 const counters = document.querySelectorAll('.skills__percent-nomber'),
     lines = document.querySelectorAll('.skills__percent-line');
