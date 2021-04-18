@@ -17,6 +17,8 @@ menuClose.addEventListener('click', () => {
 menuLink.forEach(item => {
     item.querySelector("a").addEventListener('click', () => {
         menu.classList.remove('active');
+        document.body.style.overflow = '';
+
     });
 });
 
