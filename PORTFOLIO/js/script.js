@@ -23,6 +23,7 @@ menuLink.forEach(item => {
 document.addEventListener('keydown', (e) => { // событие keydown срабатывает при нажатии кнопок
     if (e.code === 'Escape' && menu.classList.contains('active')) {
         menu.classList.remove('active');
+        document.body.style.overflow = '';
     }
 });
 
