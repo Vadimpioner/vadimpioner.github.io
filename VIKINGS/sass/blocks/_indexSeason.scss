@@ -1,0 +1,61 @@
+.season {
+    background: black;
+    padding: 100px 0;
+    &__wrapper {
+        margin-top: 172px;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 250px;
+        column-gap: 75px;
+        row-gap: 100px;
+        counter-reset: number;
+        &-item {
+            background-position: center;
+            background-repeat: no-repeat;
+            list-style: none;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+                .season__wrapper-item-link {
+                    opacity: 1;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(14, 14, 14, 0.8);
+                }
+            }
+            &:before {
+                content: '0' counter(number);
+                counter-increment: number;
+                position: absolute;
+                font-size: 96px;
+                color: #600E09;
+                font-weight: 700;
+                left: 0;
+                top: -72px;
+            }
+            &:nth-child(n+10)::before {
+                content: counter(number);
+            }
+            &-link {
+                text-decoration: none;
+                font-size: 36px;
+                padding: 12px 78px;
+                background: #0E0E0E;
+                color: white;
+                opacity: 0;
+                transition: all 0.5s;
+                z-index: 2;
+                cursor: pointer;
+            }
+        }
+    }
+}

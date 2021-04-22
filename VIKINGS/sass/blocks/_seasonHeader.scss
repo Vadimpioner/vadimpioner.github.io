@@ -1,0 +1,53 @@
+.seasonHeader {
+    background: url(../img/fon2.png) no-repeat 50%/cover;
+    height: 85vh;
+    background-position: center 50px;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        background: linear-gradient(180deg, #111213 0%, #111213 43.62%, rgba(32, 31, 33, 0) 86.33%);
+        height: 150px;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.menu {
+    margin: 0 auto;
+    margin-top: 25px;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    &__logo {
+        margin-right: 55px;
+    }
+    &__logo577px {
+        display: none;
+    }
+    &__block {
+        margin: 0 auto;
+        width: 1200px;
+        position: absolute;
+        display: flex;
+        gap: 51px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: black;
+        padding: 44px 47px 64px 35px;
+        &-num {
+            font-size: 96px;
+            line-height: 72px;
+            font-weight: 700;
+            span {
+                font-size: 36px;
+                line-height: 36px;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}

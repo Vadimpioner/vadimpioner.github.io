@@ -1,0 +1,44 @@
+.trailer {
+    background: url(../img/fon1.jpg) no-repeat 50%/cover;
+    background-position: center center;
+    padding-top: 40vh;
+    height: 100vh;
+    text-align: right;
+    &__text {
+        font-size: 72px;
+        margin-bottom: 40px;
+        p {
+            display: block;
+        }
+        .one {
+            color: #85CCDC;
+            text-align: center;
+            margin-left: 250px;
+        }
+        .two {
+            color: #85CCDC;
+            margin-right: 40px;
+        }
+    }
+    &__btn {
+        margin-right: 250px;
+        font-size: 18px;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding-left: 112px;
+        position: relative;
+        &::before {
+            border: none;
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 0;
+            top: -40px;
+            background-image: url('../icons/youtube.svg');
+        }
+    }
+    &__btn320px {
+        display: none;
+    }
+}

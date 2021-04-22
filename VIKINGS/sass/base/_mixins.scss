@@ -1,0 +1,13 @@
+@mixin name {
+    &:before {
+        /* content: "";
+        position: absolute;
+        border-radius: 100%;
+        z-index: -1;
+        left: 0;
+        top: -25%;
+        width: 36px;
+        height: 36px;
+        background: $main-color; */
+    }
+}

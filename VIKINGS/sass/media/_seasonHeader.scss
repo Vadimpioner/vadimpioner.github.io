@@ -1,0 +1,139 @@
+@media (max-width: 1280px) {
+    .menu {
+        &__block {
+            padding: 30px 30px 30px 30px;
+            width: 900px;
+            &-descr {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .menu {
+        &__block {
+            padding: 30px 30px 30px 30px;
+            width: 100%;
+            &-descr {
+                font-size: 13px;
+            }
+        }
+        &__season {
+            li {
+                padding: 10px 0;
+                a {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .seasonHeader {
+        .container {
+            max-width: 100%;
+        }
+        .menu {
+            z-index: 2;
+            margin: unset;
+            transition: 1s all;
+            display: block;
+            width: 80%;
+            left: -100%;
+            background: #187763;
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            &__block {
+                height: 200px;
+                &-descr {
+                    overflow: auto;
+                    &::-webkit-scrollbar {
+                        width: 0;
+                    }
+                }
+            }
+            &__logo {
+                display: none;
+            }
+            &__logo577px {
+                display: block;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+            &__season {
+                height: 100vh;
+                flex-direction: column;
+                &-list {
+                    padding: 20px 0;
+                    text-align: center;
+                    margin-right: 0;
+                }
+            }
+            &__close {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+            }
+        }
+        .active {
+            left: 0;
+            transition: 1s all;
+        }
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            cursor: pointer;
+            span {
+                display: block;
+                width: 30px;
+                height: 3px;
+                background: $main-color;
+            }
+            span.long {
+                width: 36px;
+            }
+        }
+        .logo {
+            img {
+                padding: 0 125px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .menu {
+        &__block {
+            padding: 20px 20px 20px 20px;
+            width: 100%;
+            gap: 20px;
+            &-num {
+                font-size: 70px;
+                line-height: 48px;
+                span {
+                    font-size: 28px;
+                }
+            }
+        }
+        &__season {
+            li {
+                a {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

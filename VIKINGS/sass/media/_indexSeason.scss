@@ -1,0 +1,42 @@
+@media (max-width: 1280px) {
+    .season {
+        padding: 50px 0;
+        &__wrapper {
+            margin-top: 100px;
+            grid-template-columns: repeat(3, 280px);
+            row-gap: 75px;
+            column-gap: 45px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .season {
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .season {
+        &__wrapper {
+            padding: 0 10px;
+            grid-template-columns: repeat(2, minmax(240px, 1fr));
+            column-gap: 40px;
+            &-item {
+                &-link {
+                    padding: 12px 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .season {
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+}
