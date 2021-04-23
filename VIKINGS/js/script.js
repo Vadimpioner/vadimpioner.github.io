@@ -5,7 +5,7 @@ $(function() {
     });
 
     $('.slider__wrapper').slick({
-        dots: false,
+        dots: true,
         speed: 1000,
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/right.png"></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icons/left.png"></button>',
