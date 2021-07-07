@@ -10,12 +10,7 @@ class Basket {
         CATALOG.forEach(
             ({
                 id,
-                newSpanOne,
-                newSpanTwo,
-                newSpanThree,
-                images,
-                inStock,
-                code,
+
                 descr,
                 price,
                 oldPrice,
@@ -37,7 +32,7 @@ class Basket {
                 <table>
                     ${htmlCatalog}
                     <tr>
-                        <td class="extra__wrapper-descr">Сумма:</td>
+                        <td class="extra__wrapper-descr">Итоговая сумма:</td>
                         <td class="extra__wrapper-price">${sumCatalog.toLocaleString()} р.</td>    
                     </tr>
                 </table>

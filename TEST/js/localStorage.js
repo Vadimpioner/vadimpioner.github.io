@@ -9,6 +9,7 @@ class LocalStorage {
         }
         return [];
     }
+
     putCard(id) {
         let card = this.getCard();
         let pushCard = false;
@@ -29,5 +30,4 @@ class LocalStorage {
         };
     }
 }
-
 const newLocalStorage = new LocalStorage();

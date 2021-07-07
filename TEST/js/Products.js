@@ -4,6 +4,7 @@ class Products {
         this.addBasketText = 'В корзину';
         this.removeBasketText = 'Удалить';
         this.activeHeartClass = 'heart__active';
+        // this.sosImages = 'promo__card-img';
     }
 
     renderButton(element, id) {
@@ -20,17 +21,22 @@ class Products {
 
         newNumberCard.render(card.length);
     }
-    // renderHeart(element, id) {
-    //     const { pushCard, card } = newLocalStorage.putCard(id);
 
-    //     if (pushCard) {
-    //         element.classList.add(this.activeHeartClass);
-    //     } else {
-    //         element.classList.remove(this.activeHeartClass);
-    //     }
-    // }
+    renderHeart(element, id) {
+        const { pushHeart, heart } = newLocalStorageHeart.putHeart(id);
+
+        if (pushHeart) {
+            element.classList.add(this.activeHeartClass);
+        } else {
+            element.classList.remove(this.activeHeartClass);
+        }
+
+        newNumberHeart.render(heart.length);
+    }
+
     render() {
         const cardStore = newLocalStorage.getCard();
+        const heartStore = newLocalStorageHeart.getHeart();
         let htmlCatalog = ``;
         CATALOG.forEach(
             ({
@@ -58,11 +64,11 @@ class Products {
 
                 let activeHeart = '';
 
-                // if (cardStore.indexOf(id) === -1) {
-                //     activeHeart;
-                // } else {
-                //     activeHeart = ' ' + this.activeHeartClass;
-                // }
+                if (heartStore.indexOf(id) === -1) {
+                    activeHeart;
+                } else {
+                    activeHeart = ' ' + this.activeHeartClass;
+                }
 
                 htmlCatalog += `
                 <div class="promo__card">
@@ -92,6 +98,7 @@ class Products {
                             <img src="img/basket.png" alt="basket">
                         </div>
                     </div>
+                    
                     <div class="promo__card-button">
                         <div class="line">
                             <img src="icons/minus.svg" alt="minus" class="minus">

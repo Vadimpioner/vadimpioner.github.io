@@ -10,49 +10,6 @@ $('.slider__wrapper').slick({
     arrows: true,
 });
 
-// // SLIDER-2
-// $(document).ready(function () {
-//     $('.promo__wrapper').slick({
-//         slidesToShow: 4,
-//         infinite: false,
-//         variableWidth: true,
-//         prevArrow:
-//             '<button type="button" class="slick-prev"><img src="icons/left-orange.svg"></button>',
-//         nextArrow:
-//             '<button type="button" class="slick-next"><img src="icons/right-orange.svg"></button>',
-//         arrows: true,
-//         dots: true,
-//     });
-//     var dots = $('.promo__wrapper li');
-//     //вешаем обработчик на наши точки
-//     dots.click(function () {
-//         var $this = $(this);
-//         dots.removeClass('before after');
-//         //отображаем 2 предыдущие точки
-//         $this.prev().addClass('before').prev().addClass('before');
-//         //отображаем 2 следующие точки
-//         $this.next().addClass('after').next().addClass('after').next();
-
-//         //если мы в самом начале - добавляем пару последующих точек
-//         if (!$this.prev().length) {
-//             $this.next().next().next().addClass('after');
-//         }
-//         //на 2й позиции - добавляем одну точку
-//         if (!$this.prev().prev().length) {
-//             $this.next().next().next().addClass('after');
-//         }
-//         //в самом конце - добавляем пару доп. предыдущих точек
-//         if (!$this.next().length) {
-//             $this.prev().prev().prev().addClass('before');
-//         }
-//         //предпоследний элемента - добавляем одну пред. точку
-//         if (!$this.next().next().length) {
-//             $this.prev().prev().prev().addClass('before');
-//         }
-//     });
-//     dots.eq(0).click(); //кликаем на первую точку
-// });
-
 // MENU
 function menuAdaptive(hamburger, menu, menuClose, menuLink) {
     hamburger = document.querySelector(hamburger);
@@ -89,9 +46,7 @@ function menuAdaptive(hamburger, menu, menuClose, menuLink) {
 menuAdaptive('.hamburger', '.menu', '.menu__close' /* '.menu__link' */);
 
 // BTN HEADER
-
 let li = document.querySelector('.one__li a');
-
 li.onclick = function () {
     let liMore = document.querySelector('.drop-down');
     function toggle(el) {
@@ -99,6 +54,17 @@ li.onclick = function () {
     }
     toggle(liMore);
 };
+
+// MORE BTN
+// let downButton = document.querySelector('.promo__card-more');
+// downButton.onclick = function () {
+//     let btnMore = document.querySelector('.promo__card-button');
+//     function toggle(el) {
+//         el.style.display = 'block';
+//     }
+//     // toggle(btnMore);
+//     console.log(toggle(btnMore));
+// };
 
 // SLIDER 2
 $(document).ready(function () {
