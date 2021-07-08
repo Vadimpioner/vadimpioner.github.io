@@ -11,11 +11,13 @@ $('.slider__wrapper').slick({
 });
 
 // MENU
-function menuAdaptive(hamburger, menu, menuClose, menuLink) {
+function menuAdaptive(hamburger, menu, menuClose, menuLink, menuLinkTwo, menuLinkThree) {
     hamburger = document.querySelector(hamburger);
     menu = document.querySelector(menu);
     menuClose = document.querySelector(menuClose);
-    // menuLink = document.querySelectorAll(menuLink);
+    menuLink = document.querySelectorAll(menuLink);
+    menuLinkTwo = document.querySelectorAll(menuLinkTwo);
+    menuLinkThree = document.querySelectorAll(menuLinkThree);
 
     hamburger.addEventListener('click', () => {
         menu.classList.add('active');
@@ -27,12 +29,26 @@ function menuAdaptive(hamburger, menu, menuClose, menuLink) {
         document.body.style.overflow = '';
     });
 
-    // menuLink.forEach((item) => {
-    //     item.querySelector('a').addEventListener('click', () => {
-    //         menu.classList.remove('active');
-    //         document.body.style.overflow = '';
-    //     });
-    // });
+    menuLink.forEach((item) => {
+        item.addEventListener('click', () => {
+            menu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    menuLinkTwo.forEach((item) => {
+        item.querySelector('div').addEventListener('click', () => {
+            menu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    menuLinkThree.forEach((item) => {
+        item.addEventListener('click', () => {
+            menu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
 
     document.addEventListener('keydown', (e) => {
         // событие keydown срабатывает при нажатии кнопок
@@ -43,7 +59,14 @@ function menuAdaptive(hamburger, menu, menuClose, menuLink) {
     });
 }
 
-menuAdaptive('.hamburger', '.menu', '.menu__close' /* '.menu__link' */);
+menuAdaptive(
+    '.hamburger',
+    '.menu',
+    '.menu__close',
+    '.header__search-favorites',
+    '.header__search-basket',
+    '.header__wrapper li',
+);
 
 // BTN HEADER
 let li = document.querySelector('.one__li a');
