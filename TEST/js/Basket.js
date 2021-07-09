@@ -2,6 +2,7 @@ class Basket {
     closeBasket() {
         ROOT_BASKET.innerHTML = '';
     }
+
     render() {
         const cardStore = newLocalStorage.getCard();
         let htmlCatalog = ``;
@@ -38,12 +39,24 @@ class Basket {
                 </table>
             </div>
         `;
-        ROOT_BASKET.innerHTML = HTML;
 
-        // return {
-        //     sumCatalog,
-        // };
+        ROOT_BASKET.innerHTML = HTML;
+    }
+    SUM() {
+        const cardStore = newLocalStorage.getCard();
+        let htmlCatalog = ``;
+        let bon = 0;
+
+        CATALOG.forEach(({ id, price }) => {
+            if (cardStore.indexOf(id) !== -1) {
+                htmlCatalog += `${price.toLocaleString()}`;
+                bon += price;
+            }
+        });
+        const SUM = `<span>${bon.toLocaleString()} р.</span>`;
+        ALL_MONEY.innerHTML = SUM;
     }
 }
 
 const newBasket = new Basket();
+newBasket.SUM();

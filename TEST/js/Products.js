@@ -4,7 +4,6 @@ class Products {
         this.addBasketText = 'В корзину';
         this.removeBasketText = 'Удалить';
         this.activeHeartClass = 'heart__active';
-        // this.sosImages = 'promo__card-img';
     }
 
     renderButton(element, id) {
@@ -20,6 +19,32 @@ class Products {
         }
 
         newNumberCard.render(card.length);
+    }
+    renderOneClick() {
+        function bindModal(trigger, modal, close) {
+            trigger = document.querySelectorAll(trigger);
+            modal = document.querySelector(modal);
+            close = document.querySelector(close);
+            trigger.forEach((item) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            close.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        bindModal('.card__by', '.modal__BUY', '.modal__close');
     }
 
     renderHeart(element, id) {
@@ -106,7 +131,7 @@ class Products {
                             <img src="icons/plus.svg" alt="plus" class="plus">
                         </div>
                         <div class="button">
-                            <button class="card__by">Купить в 1 клик</button>
+                            <button class="card__by" onclick="productsPage.renderOneClick();">Купить в 1 клик</button>
                             <button class="${activeBasket}" onclick="productsPage.renderButton(this, '${id}');">${basketText}</button>
                         </div>
                     </div>

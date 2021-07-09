@@ -37,7 +37,7 @@ function menuAdaptive(hamburger, menu, menuClose, menuLink, menuLinkTwo, menuLin
     });
 
     menuLinkTwo.forEach((item) => {
-        item.querySelector('div').addEventListener('click', () => {
+        item.addEventListener('click', () => {
             menu.classList.remove('active');
             document.body.style.overflow = '';
         });
@@ -73,21 +73,12 @@ let li = document.querySelector('.one__li a');
 li.onclick = function () {
     let liMore = document.querySelector('.drop-down');
     function toggle(el) {
-        el.style.display = el.style.display == 'none' ? 'block' : 'none';
+        el.style.display = el.style.display == 'block' ? 'none' : 'block';
     }
     toggle(liMore);
 };
 
-// MORE BTN
-// let downButton = document.querySelector('.promo__card-more');
-// downButton.onclick = function () {
-//     let btnMore = document.querySelector('.promo__card-button');
-//     function toggle(el) {
-//         el.style.display = 'block';
-//     }
-//     // toggle(btnMore);
-//     console.log(toggle(btnMore));
-// };
+// MODAL BUY
 
 // SLIDER 2
 $(document).ready(function () {
