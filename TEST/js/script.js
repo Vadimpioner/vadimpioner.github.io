@@ -176,3 +176,70 @@ $(document).ready(function () {
         dots: true,
     });
 });
+
+const btns = document.querySelectorAll('.btn-input');
+btns.forEach((btn) => {
+    btn.addEventListener('click', function () {
+        const direction = this.dataset.direction;
+        const b = this.parentElement.querySelector('.input-card');
+        const currentValue = +b.value;
+        let newValue;
+        if (direction === 'plus') {
+            newValue = currentValue + 1;
+        } else {
+            newValue = currentValue - 1 > 0 ? currentValue - 1 : 0;
+        }
+        b.value = newValue;
+    });
+});
+
+// function PLUSE(btns, btns2, add, remove) {
+//     btns = document.querySelector(btns);
+//     btns2 = document.querySelector(btns2);
+
+//     add = document.querySelectorAll(add);
+//     remove = document.querySelectorAll(remove);
+//     integer = 0;
+
+//     add.forEach((item) => {
+//         item.addEventListener('click', function () {
+//             integer += 1;
+//             btns.innerHTML = integer;
+//             btns2.innerHTML = integer;
+//         });
+//     });
+//     remove.forEach((item) => {
+//         item.addEventListener('click', function () {
+//             integer -= 1;
+//             btns.innerHTML = integer;
+//             btns2.innerHTML = integer;
+//         });
+//     });
+// }
+
+// PLUSE('.oneSpan', '.twoSpan', '.btn-input-pluse', '.btn-input-minus');
+
+function bindModal(trigger, modal, close) {
+    trigger = document.querySelectorAll(trigger);
+    modal = document.querySelector(modal);
+    close = document.querySelector(close);
+    trigger.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    close.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+bindModal('.card__by', '.modal__BUY', '.modal__close');

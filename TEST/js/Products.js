@@ -21,32 +21,6 @@ class Products {
         newNumberCard.render(card.length);
         newBasket.SUM(card.length);
     }
-    renderOneClick() {
-        function bindModal(trigger, modal, close) {
-            trigger = document.querySelectorAll(trigger);
-            modal = document.querySelector(modal);
-            close = document.querySelector(close);
-            trigger.forEach((item) => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    modal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-            close.addEventListener('click', () => {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
-            });
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = '';
-                }
-            });
-        }
-
-        bindModal('.card__by', '.modal__BUY', '.modal__close');
-    }
 
     renderHeart(element, id) {
         const { pushHeart, heart } = newLocalStorageHeart.putHeart(id);
@@ -64,6 +38,7 @@ class Products {
         const cardStore = newLocalStorage.getCard();
         const heartStore = newLocalStorageHeart.getHeart();
         let htmlCatalog = ``;
+
         CATALOG.forEach(
             ({
                 id,
@@ -95,7 +70,6 @@ class Products {
                 } else {
                     activeHeart = ' ' + this.activeHeartClass;
                 }
-
                 htmlCatalog += `
                 <div class="promo__card">
                     <div class="heart${activeHeart}" onclick="productsPage.renderHeart(this, '${id}');"></div>
@@ -120,19 +94,19 @@ class Products {
                         <b>${price.toLocaleString()} р.</b>
                         <span>${oldPrice} р.</span>
                         <div class="basket">
-                            <div class="basket__number">3</div>
+                            <div class="basket__number">1</div>                       
                             <img src="img/basket.png" alt="basket">
                         </div>
                     </div>
                     
                     <div class="promo__card-button">
                         <div class="line">
-                            <img src="icons/minus.svg" alt="minus" class="minus">
-                            <b>200</b>
-                            <img src="icons/plus.svg" alt="plus" class="plus">
+                            <img src="icons/minus.svg" data-direction="minus" alt="minus" class="btn-input">
+                                <input class="input-card" value="0" type="text">
+                            <img src="icons/plus.svg" data-direction="plus" alt="plus" class="btn-input">
                         </div>
                         <div class="button">
-                            <button class="card__by" onclick="productsPage.renderOneClick();">Купить в 1 клик</button>
+                            <button class="card__by">Купить в 1 клик</button>
                             <button class="${activeBasket}" onclick="productsPage.renderButton(this, '${id}');">${basketText}</button>
                         </div>
                     </div>
