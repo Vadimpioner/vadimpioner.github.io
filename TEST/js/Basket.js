@@ -8,25 +8,17 @@ class Basket {
         let htmlCatalog = ``;
         let sumCatalog = 0;
 
-        CATALOG.forEach(
-            ({
-                id,
-
-                descr,
-                price,
-                oldPrice,
-            }) => {
-                if (cardStore.indexOf(id) !== -1) {
-                    htmlCatalog += `
+        CATALOG.forEach(({ id, descr, price }) => {
+            if (cardStore.indexOf(id) !== -1) {
+                htmlCatalog += `
                         <tr>
                             <td class="extra__wrapper-descr">${descr}</td>
                             <td class="extra__wrapper-price">${price.toLocaleString()} р.</td>    
                         </tr>
                     `;
-                    sumCatalog += price;
-                }
-            },
-        );
+                sumCatalog += price;
+            }
+        });
         const HTML = `
             <div class="extra__wrapper">
                 <div class="extra__wrapper-close" onclick="newBasket.closeBasket()"></div>
@@ -37,6 +29,7 @@ class Basket {
                         <td class="extra__wrapper-price">${sumCatalog.toLocaleString()} р.</td>    
                     </tr>
                 </table>
+                
             </div>
         `;
 

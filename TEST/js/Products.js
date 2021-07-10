@@ -94,7 +94,7 @@ class Products {
                         <b>${price.toLocaleString()} р.</b>
                         <span>${oldPrice} р.</span>
                         <div class="basket">
-                            <div class="basket__number">1</div>                       
+                            <div class="basket__number">0</div>                       
                             <img src="img/basket.png" alt="basket">
                         </div>
                     </div>
