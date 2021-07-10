@@ -101,13 +101,19 @@ class Products {
                     
                     <div class="promo__card-button">
                         <div class="line">
-                            <img src="icons/minus.svg" data-direction="minus" alt="minus" class="btn-input">
+                            <svg data-direction="minus" alt="minus" class="btn-input" width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.9963 19.8571C26.9963 20.3305 26.6125 20.7143 26.1391 20.7143H15.8534C15.38 20.7143 14.9963 20.3305 14.9963 19.8571C14.9963 19.3838 15.38 19 15.8534 19H26.1391C26.6125 19 26.9963 19.3838 26.9963 19.8571Z" fill="#894083"/>
+                            </svg>
+                            
                                 <input class="input-card" value="0" type="text">
-                            <img src="icons/plus.svg" data-direction="plus" alt="plus" class="btn-input">
+
+                            <svg data-direction="plus" alt="plus" class="btn-input" width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.9963 20C26.9963 20.4734 26.6125 20.8571 26.1391 20.8571H21.8534V25.1429C21.8534 25.6162 21.4697 26 20.9963 26C20.5229 26 20.1391 25.6162 20.1391 25.1429V20.8571H15.8534C15.38 20.8571 14.9963 20.4734 14.9963 20C14.9963 19.5266 15.38 19.1429 15.8534 19.1429H20.1391V14.8571C20.1391 14.3838 20.5229 14 20.9963 14C21.4697 14 21.8534 14.3838 21.8534 14.8571V19.1429H26.1391C26.6125 19.1429 26.9963 19.5266 26.9963 20Z" fill="#894083"/>
+                            </svg>
                         </div>
                         <div class="button">
                             <button class="card__by">Купить в 1 клик</button>
-                            <button class="${activeBasket}" onclick="productsPage.renderButton(this, '${id}');">${basketText}</button>
+                            <button class="card__add ${activeBasket}" onclick="productsPage.renderButton(this, '${id}');">${basketText}</button>
                         </div>
                     </div>
                 </div>
