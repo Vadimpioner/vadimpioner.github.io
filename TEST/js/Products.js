@@ -19,6 +19,7 @@ class Products {
         }
 
         newNumberCard.render(card.length);
+        newBasket.SUM(card.length);
     }
     renderOneClick() {
         function bindModal(trigger, modal, close) {

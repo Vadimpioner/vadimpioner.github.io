@@ -73,7 +73,7 @@ let li = document.querySelector('.one__li a');
 li.onclick = function () {
     let liMore = document.querySelector('.drop-down');
     function toggle(el) {
-        el.style.display = el.style.display == 'block' ? 'none' : 'block';
+        el.style.display = el.style.display == 'flex' ? 'none' : 'flex';
     }
     toggle(liMore);
 };
