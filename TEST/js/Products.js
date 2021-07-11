@@ -55,6 +55,7 @@ class Products {
                 // console.log(id);
                 let activeBasket = '';
                 let basketText = '';
+                let span = '';
 
                 if (cardStore.indexOf(id) === -1) {
                     basketText = this.addBasketText;
@@ -70,6 +71,7 @@ class Products {
                 } else {
                     activeHeart = ' ' + this.activeHeartClass;
                 }
+
                 htmlCatalog += `
                 <div class="promo__card">
                     <div class="heart${activeHeart}" onclick="productsPage.renderHeart(this, '${id}');"></div>
