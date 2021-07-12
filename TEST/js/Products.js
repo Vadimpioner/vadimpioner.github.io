@@ -38,7 +38,7 @@ class Products {
         const cardStore = newLocalStorage.getCard();
         const heartStore = newLocalStorageHeart.getHeart();
         let htmlCatalog = ``;
-
+        let sliderCatalog = ``;
         CATALOG.forEach(
             ({
                 id,
@@ -122,9 +122,18 @@ class Products {
             `;
             },
         );
+        SLIDER.forEach(({ id, title, img }) => {
+            sliderCatalog += `
+                <a href="#" class="slider__wrapper-block">
+                    <span>${title}</span>
+                    <img data-lazy="${img}" alt="slider">
+                </a>
+            `;
+        });
 
         const HTML = htmlCatalog;
         CARD.innerHTML = HTML; // root.js
+        ROOT_SLIDER.innerHTML = sliderCatalog;
     }
 }
 const productsPage = new Products();

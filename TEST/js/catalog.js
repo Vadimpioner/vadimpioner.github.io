@@ -612,3 +612,36 @@ const CATALOG = [
         oldPrice: 600.2,
     },
 ];
+
+const SLIDER = [
+    {
+        id: 'sl1',
+        title: 'Слайд первого экрана',
+        img: 'img/slide2.jpg',
+    },
+    {
+        id: 'sl2',
+        title: 'Слайд второго экрана',
+        img: 'img/slide3.jpg',
+    },
+    {
+        id: 'sl3',
+        title: 'Слайд третьего экрана',
+        img: 'img/slide4.jpg',
+    },
+    {
+        id: 'sl4',
+        title: 'Слайд четвертого экрана',
+        img: 'img/slide5.jpg',
+    },
+    {
+        id: 'sl5',
+        title: 'Слайд пятого экрана',
+        img: 'img/slide6.jpg',
+    },
+    {
+        id: 'sl6',
+        title: 'Слайд шестого экрана',
+        img: 'img/slide1.jpg',
+    },
+];
