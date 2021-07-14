@@ -3,6 +3,7 @@ $('.slider__wrapper').slick({
     infinite: true,
     autoplay: true,
     autoplaySpeed: 5000,
+    slidesToShow: 1,
     speed: 2000,
     pauseOnHover: true,
     prevArrow: '<button type="button" class="slick-prev"><img src="icons/left.svg"></button>',
